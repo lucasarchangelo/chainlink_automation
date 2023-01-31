@@ -1,0 +1,12 @@
+{
+    "description": "WVW Ticket is used to give access to our website to watch and earn",
+    "external_url": "https://wvwtoken.com",
+    "image": "https://wvw.infura-ipfs.io/ipfs/QmRYhbWrL5PrgszmpsMWKUCcpMz7TZC8WobeGXRonSjhnm",
+    "name": "WVW Ticket",
+    "attributes": [
+        {
+            "trait_type": "Plan",
+            "value": "30 Days"
+        }
+    ]
+}
