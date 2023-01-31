@@ -42,3 +42,7 @@ to discuss what you would like to change.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Contribution
+NFT images was made by [Fabio](https://github.com/smartsecbr).
+Thanks for this, man!
