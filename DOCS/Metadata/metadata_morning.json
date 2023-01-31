@@ -1,0 +1,12 @@
+{
+  "description": "It's morning for this NFT",
+  "external_url": "https://example.com.br",
+  "image": "https://clashcardschampions.infura-ipfs.io/ipfs/QmV5hVxhnYb4H2Z9UTxsMa1XsE3nyp6gsZxdKk6dtcb3kL",
+  "name": "NFT Day",
+  "attributes": [
+    {
+      "trait_type": "Time",
+      "value": "Morning"
+    }
+  ]
+}

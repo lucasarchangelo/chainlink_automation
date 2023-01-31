@@ -1,12 +1,12 @@
 {
-    "description": "WVW Ticket is used to give access to our website to watch and earn",
-    "external_url": "https://wvwtoken.com",
-    "image": "https://wvw.infura-ipfs.io/ipfs/QmRYhbWrL5PrgszmpsMWKUCcpMz7TZC8WobeGXRonSjhnm",
-    "name": "WVW Ticket",
+    "description": "It's night for this NFT",
+    "external_url": "https://example.com.br",
+    "image": "https://clashcardschampions.infura-ipfs.io/ipfs/QmRYDKWvdvxTvPk95exjsd6qgFSA8wCJFXqKziaGWoNLVV",
+    "name": "NFT Day",
     "attributes": [
-        {
-            "trait_type": "Plan",
-            "value": "30 Days"
-        }
+      {
+        "trait_type": "Time",
+        "value": "Night"
+      }
     ]
-}
+  }

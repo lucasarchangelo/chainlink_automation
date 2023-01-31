@@ -1,12 +1,12 @@
 {
-    "description": "WVW Ticket is used to give access to our website to watch and earn",
+    "description": "It's aftermoon for this NFT",
     "external_url": "https://wvwtoken.com",
-    "image": "https://wvw.infura-ipfs.io/ipfs/QmWGmmCcUCs5HCeLP186aZDFT8M5xNoJAz3js42qSwbRFT",
-    "name": "WVW Ticket",
+    "image": "https://wvw.infura-ipfs.io/ipfs/QmTr1wgbdGSvWndkCQ7WP4GdjbUmjqWy2qeHcvuSWu7dac",
+    "name": "NFT Day",
     "attributes": [
         {
-            "trait_type": "Plan",
-            "value": "21 Days"
-        }
+            "trait_type": "Time",
+            "value": "Aftermoon"
+          }
     ]
 }
