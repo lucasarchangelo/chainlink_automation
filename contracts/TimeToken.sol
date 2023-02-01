@@ -18,8 +18,8 @@ contract TimeToken is
 
     Counters.Counter private _tokenIdCounter;
 
-    uint256 interval = 8 hours;
-    bool isOn = true;
+    uint256 public interval = 8 hours;
+    bool public isOn = true;
 
     enum TimeType {
         MORNING,
@@ -42,16 +42,20 @@ contract TimeToken is
     mapping(uint256 => DayAttribute) dayAttributes;
     uint256[] listTokens;
 
-    constructor() ERC721("TimeToken", "TIC") {
+    constructor(address _owner) ERC721("TimeToken", "TIC") {
         //Start Counter by 1
         _tokenIdCounter.increment();
+
+        if(msg.sender != _owner) {
+            transferOwnership(_owner);
+        }
     }
 
     function _baseURI() internal pure override returns (string memory) {
         return "https://clashcardschampions.infura-ipfs.io/ipfs/";
     }
 
-    function safeMint(address to) public onlyOwner {
+    function safeMint(address to) external onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
@@ -116,7 +120,7 @@ contract TimeToken is
         }
     }
 
-    function setVariables(uint256 _interval, bool _status) external {
+    function setVariables(uint256 _interval, bool _status) external onlyOwner {
         interval = _interval;
         isOn = _status;
     }
