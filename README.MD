@@ -36,6 +36,9 @@ truffle migrate --network mumbai
 
 ## Contributing
 
+NFT images was made by [Fabio](https://github.com/smartsecbr).
+Thanks for this, man!
+
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
