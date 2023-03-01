@@ -9,7 +9,8 @@
   "scripts": {
     "start_local": "ganache -i 999 -m \"teach core boat want author animal neglect social bone page modify mass\"",
     "test": "truffle test",
-    "mmumbai": "truffle migrate --network mumbai"
+    "mmumbai": "truffle migrate --network mumbai",
+    "vmumbai": "truffle run verify TimeToken --network mumbai"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "@chainlink/contracts": "^0.6.0",
     "@openzeppelin/contracts": "^4.8.1",
     "@truffle/hdwallet-provider": "^2.1.5",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "truffle-plugin-verify": "^0.6.1"
   }
 }

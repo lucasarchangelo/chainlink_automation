@@ -33,11 +33,11 @@ contract TimeToken is
     }
 
     string private constant MORNING =
-        "QmeEM9pswM8ei2AeHrBGfbDzba9eBCZTL7xdpQD7S3VY5N";
+        "Qmass3MAH94Dkmi8vT7hGLr6EyLqu36JPPMEwPe1UYUidj";
     string private constant AFTERMOON =
-        "QmQxdL8vK1g1qtR73vA4o3gFZf8gYwpod4zRHgTrfb62Qh";
+        "QmNdz3LAo7ajCrmsLfhF6Tn8nDknpKpAXNxTSDLYyah7v7";
     string private constant NIGHT =
-        "QmYwCQb3VFC6x5WH5AM3QcdY9r7v3znZfUY1aZ2SEwKNqz";
+        "QmVjmLuz3EhnVgNk2Gb9YSqvwKffuMsY9D4akEk82gsmG4";
 
     mapping(uint256 => DayAttribute) dayAttributes;
     uint256[] listTokens;
@@ -52,7 +52,7 @@ contract TimeToken is
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://clashcardschampions.infura-ipfs.io/ipfs/";
+        return "https://chainlinkbootcamp.infura-ipfs.io/ipfs/";
     }
 
     function safeMint(address to) external onlyOwner {

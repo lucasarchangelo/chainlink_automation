@@ -19,8 +19,12 @@
  */
 
 require("dotenv").config();
-const mnemonic = process.env["MNEMONIC"];
-const infuraProjectId = process.env["INFURA_PROJECT_ID"];
+
+const mnemonic = process.env["MNEMONIC_ENV"];
+const infuraProjectId = process.env["INFURA_PROJECT_ID_ENV"];
+const maticProjectId = process.env["MATIC_PROJECT_ID_ENV"];
+const POLYGONSCANAPIKEY = process.env["POLYGONSCANAPIKEY_ENV"];
+
 const BSCSCANAPIKEY = process.env["BSCSCANAPIKEY"];
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
@@ -39,7 +43,8 @@ module.exports = {
   // contracts_build_directory: "../Client/contracts",
   plugins: ["truffle-plugin-verify"],
   api_keys: {
-    bscscan: BSCSCANAPIKEY
+    bscscan: BSCSCANAPIKEY,
+    polygonscan: POLYGONSCANAPIKEY,
   },
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
@@ -89,7 +94,7 @@ module.exports = {
       skipDryRun: true
     },
     mumbai: {
-      provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.matic.today`),
+      provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com/v1/${maticProjectId}`),
       network_id: 80001,
       confirmations: 2,
       timeoutBlocks: 200,
