@@ -20,11 +20,10 @@
 
 require("dotenv").config();
 
-const mnemonic = process.env["MNEMONIC_ENV"];
-const infuraProjectId = process.env["INFURA_PROJECT_ID_ENV"];
-const maticProjectId = process.env["MATIC_PROJECT_ID_ENV"];
-const POLYGONSCANAPIKEY = process.env["POLYGONSCANAPIKEY_ENV"];
-
+const mnemonic = process.env["MNEMONIC"];
+const infuraProjectId = process.env["INFURA_PROJECT_ID"];
+const maticProjectId = process.env["MATIC_PROJECT_ID"];
+const POLYGONSCANAPIKEY = process.env["POLYGONSCANAPIKEY"];
 const BSCSCANAPIKEY = process.env["BSCSCANAPIKEY"];
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
