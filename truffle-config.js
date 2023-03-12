@@ -21,10 +21,7 @@
 require("dotenv").config();
 
 const mnemonic = process.env["MNEMONIC"];
-const infuraProjectId = process.env["INFURA_PROJECT_ID"];
-const maticProjectId = process.env["MATIC_PROJECT_ID"];
 const POLYGONSCANAPIKEY = process.env["POLYGONSCANAPIKEY"];
-const BSCSCANAPIKEY = process.env["BSCSCANAPIKEY"];
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
@@ -42,7 +39,6 @@ module.exports = {
   // contracts_build_directory: "../Client/contracts",
   plugins: ["truffle-plugin-verify"],
   api_keys: {
-    bscscan: BSCSCANAPIKEY,
     polygonscan: POLYGONSCANAPIKEY,
   },
   networks: {
@@ -71,29 +67,29 @@ module.exports = {
     //
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
-    goerli: {
-      provider: () =>
-        new HDWalletProvider(
-          mnemonic,
-          `https://goerli.infura.io/v3/${infuraProjectId}`
-        ),
-      network_id: 5, // Goerli's network id
-      chain_id: 5, // Goerli's chain id
-      gas: 5500000, // Gas limit used for deploys.
-      confirmations: 2, // # of confirmations to wait between deployments. (default: 0)
-      timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true, // Skip dry run before migrations? (default: false for public nets)
-    },
-    testnet: {
-      provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-2-s3.binance.org:8545`),
-      network_id: 97,
-      confirmations: 1,
-      timeoutBlocks: 20000,
-      networkCheckTimeout: 9999999,
-      skipDryRun: true
-    },
+    // goerli: {
+    //   provider: () =>
+    //     new HDWalletProvider(
+    //       mnemonic,
+    //       `https://goerli.infura.io/v3/${infuraProjectId}`
+    //     ),
+    //   network_id: 5, // Goerli's network id
+    //   chain_id: 5, // Goerli's chain id
+    //   gas: 5500000, // Gas limit used for deploys.
+    //   confirmations: 2, // # of confirmations to wait between deployments. (default: 0)
+    //   timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
+    //   skipDryRun: true, // Skip dry run before migrations? (default: false for public nets)
+    // },
+    // testnet: {
+    //   provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-2-s3.binance.org:8545`),
+    //   network_id: 97,
+    //   confirmations: 1,
+    //   timeoutBlocks: 20000,
+    //   networkCheckTimeout: 9999999,
+    //   skipDryRun: true
+    // },
     mumbai: {
-      provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com/v1/${maticProjectId}`),
+      provider: () => new HDWalletProvider(mnemonic, `https://endpoints.omniatech.io/v1/matic/mumbai/public`),
       network_id: 80001,
       confirmations: 2,
       timeoutBlocks: 200,
@@ -106,13 +102,13 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true
     },
-    bsc: {
-      provider: () => new HDWalletProvider(mnemonic, `https://bsc-dataseed1.binance.org`),
-      network_id: 56,
-      confirmations: 10,
-      timeoutBlocks: 200,
-      skipDryRun: true
-    },
+    // bsc: {
+    //   provider: () => new HDWalletProvider(mnemonic, `https://bsc-dataseed1.binance.org`),
+    //   network_id: 56,
+    //   confirmations: 10,
+    //   timeoutBlocks: 200,
+    //   skipDryRun: true
+    // },
     //
     // Useful for private networks
     // private: {
