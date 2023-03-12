@@ -42,13 +42,9 @@ contract TimeToken is
     mapping(uint256 => DayAttribute) dayAttributes;
     uint256[] listTokens;
 
-    constructor(address _owner) ERC721("TimeToken", "TIC") {
+    constructor() ERC721("TimeToken", "TIC") {
         //Start Counter by 1
         _tokenIdCounter.increment();
-
-        if(msg.sender != _owner) {
-            transferOwnership(_owner);
-        }
     }
 
     function _baseURI() internal pure override returns (string memory) {
