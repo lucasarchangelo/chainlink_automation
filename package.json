@@ -10,7 +10,8 @@
     "start_local": "ganache -i 999 -m \"teach core boat want author animal neglect social bone page modify mass\"",
     "test": "truffle test",
     "mmumbai": "truffle migrate --network mumbai",
-    "vmumbai": "truffle run verify TimeToken --network mumbai"
+    "vmumbai": "truffle run verify TimeToken --network mumbai",
+    "mint_mumbai": "truffle exec ./scripts/mint_nft.js --network mumbai"
   },
   "keywords": [],
   "author": "",

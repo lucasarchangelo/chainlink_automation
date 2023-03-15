@@ -2,7 +2,6 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
@@ -10,7 +9,6 @@ import "@chainlink/contracts/src/v0.8/AutomationCompatible.sol";
 
 contract TimeToken is
     ERC721,
-    ERC721Burnable,
     Ownable,
     AutomationCompatibleInterface
 {
@@ -18,8 +16,8 @@ contract TimeToken is
 
     Counters.Counter private _tokenIdCounter;
 
-    uint256 public interval = 8 hours;
-    bool public isOn = true;
+    uint256 public interval;
+    bool public isOn;
 
     enum TimeType {
         MORNING,
@@ -42,13 +40,12 @@ contract TimeToken is
     mapping(uint256 => DayAttribute) dayAttributes;
     uint256[] listTokens;
 
-    constructor(address _owner) ERC721("TimeToken", "TIC") {
+    constructor() ERC721("TimeToken", "TIC") {
         //Start Counter by 1
         _tokenIdCounter.increment();
 
-        if(msg.sender != _owner) {
-            transferOwnership(_owner);
-        }
+        interval = 5 minutes;
+        isOn = true;
     }
 
     function _baseURI() internal pure override returns (string memory) {
